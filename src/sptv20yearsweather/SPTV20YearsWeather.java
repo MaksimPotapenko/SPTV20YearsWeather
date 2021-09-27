@@ -85,37 +85,51 @@ public class SPTV20YearsWeather {
     
     System.out.println();
     
-    System.out.printf("В этот день была температура: %2d ", yearsWeather[findMonth-1][findDay-1]);
-    
-    
-    System.out.println("");
-        for (int i = 0; i < 159; i++) {
-            System.out.print("-");
-        }
-    
-    int minInt=0, maxInt=0;
-        for (int j = 0; j < yearsWeather.length; j++) {
-            if(maxInt<yearsWeather[findMonth-1][j]) {
+    int maxInt=0,minInt=0;
+        for (int j = 0; j < yearsWeather[findMonth-1].length; j++) {    
+            if(maxInt<yearsWeather[findMonth-1][j]){
                 maxInt=yearsWeather[findMonth-1][j];
-            } 
-        }
-        for (int j = 0; j < yearsWeather.length; j++) {
-            if(minInt>yearsWeather[findMonth-1][j]) {
-                minInt=yearsWeather[findMonth-1][j];
-            }
-        }
-    
-        for (int i = 0; i < yearsWeather.length; i++) {
-            for (int j = 0; j < yearsWeather.length; j++) {
-                if (maxInt==yearsWeather[i][j]){
-                    System.out.println("Максимальная температура в этом месяце: ");
                 }
+            }
+            for (int j = 0; j < yearsWeather[findMonth-1].length; j++) {    
+                if(minInt>yearsWeather[findMonth-1][j]){
+                    minInt=yearsWeather[findMonth-1][j];
+                }
+            }
+        for(int i = 0; i < yearsWeather.length; i++) {
+            for (int j = 0; j < yearsWeather[i].length; j++) {
                 
             }
-            
         }
-        System.out.printf("В этот день была температура:  %2d%n", yearsWeather[findMonth-1][findDay-1]);
-        System.out.printf(maxInt);
-        System.out.printf(minInt);
+        System.out.printf("В этот день была температура: %2d%n",yearsWeather[findMonth-1][findDay-1]);
+        System.out.printf("Максимальная температура в этом месяце была: %2d%n",maxInt);
+        System.out.printf("Минимальная температура в этом месяце была: %2d%n",minInt);
+        
+        
+        
+        int max_number = 0;
+        for (int i = 0; i < yearsWeather.length; i++) {
+            for (int j = 0; j < yearsWeather.length; j++) {
+                int[] is = yearsWeather[j];
+                if (yearsWeather[i][j] > max_number) {
+                max_number = yearsWeather[i][j];
+            }
+        }
+            }
+            
+        System.out.println("максимальная температура в году: " + max_number);
+        
+        int min_number = 0;
+        for (int i = 0; i < yearsWeather.length; i++) {
+            for (int j = 0; j < yearsWeather.length; j++) {
+                int[] is = yearsWeather[j];
+                if (yearsWeather[i][j] < min_number) {
+                min_number = yearsWeather[i][j];
+            }
+        }
+            }
+            
+        System.out.println("максимальная температура в году: " + min_number);
     }
+    
 }
