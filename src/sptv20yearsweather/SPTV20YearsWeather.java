@@ -78,8 +78,44 @@ public class SPTV20YearsWeather {
         }
     System.out.println();
     
+    System.out.print("Введите месяц: ");
+    int findMonth = scanner.nextInt();
+    System.out.print("Введите день: ");
+    int findDay = scanner.nextInt();
+    
+    System.out.println();
+    
+    System.out.printf("В этот день была температура: %2d ", yearsWeather[findMonth-1][findDay-1]);
     
     
+    System.out.println("");
+        for (int i = 0; i < 159; i++) {
+            System.out.print("-");
+        }
+    
+    int minInt=0, maxInt=0;
+        for (int j = 0; j < yearsWeather.length; j++) {
+            if(maxInt<yearsWeather[findMonth-1][j]) {
+                maxInt=yearsWeather[findMonth-1][j];
+            } 
+        }
+        for (int j = 0; j < yearsWeather.length; j++) {
+            if(minInt>yearsWeather[findMonth-1][j]) {
+                minInt=yearsWeather[findMonth-1][j];
+            }
+        }
+    
+        for (int i = 0; i < yearsWeather.length; i++) {
+            for (int j = 0; j < yearsWeather.length; j++) {
+                if (maxInt==yearsWeather[i][j]){
+                    System.out.println("Максимальная температура в этом месяце: ");
+                }
+                
+            }
+            
+        }
+        System.out.printf("В этот день была температура:  %2d%n", yearsWeather[findMonth-1][findDay-1]);
+        System.out.printf(maxInt);
+        System.out.printf(minInt);
     }
-  
 }
