@@ -105,7 +105,12 @@ public class SPTV20YearsWeather {
         System.out.printf("Максимальная температура в этом месяце была: %2d%n",maxInt);
         System.out.printf("Минимальная температура в этом месяце была: %2d%n",minInt);
         
+        System.out.println("");
+        for (int i = 0; i < 159; i++) {
+            System.out.print("-");
+        }
         
+        System.out.println("");
         
         int max_number = 0;
         for (int i = 0; i < yearsWeather.length; i++) {
@@ -129,7 +134,7 @@ public class SPTV20YearsWeather {
         }
             }
             
-        System.out.println("максимальная температура в году: " + min_number);
+        System.out.println("минимальная температура в году: " + min_number);
     }
     
 }
